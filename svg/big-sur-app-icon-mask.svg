@@ -1,0 +1,99 @@
+<svg viewport="0 0 512 512" width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+<!--
+    This file can be used as a mask for your mac OS (big sur) app icon.
+
+    A MacOS App Icon contains a "background icon" part, which is a rounded triangle
+    of size 412x412, with rounded corners of radius 90 (all measurements are based on
+    a 512x512 icon). This rounded rect is centered in horizontal direction, and 4
+    pixels below center in vertical direction.
+    On top, one may draw some life-like items. A good example is the xcode icon (that
+    has a hammer overlayed on top, and sticking out), or the Preview icon (that has
+    a looking glass protruding over the right bottom corner.
+    There is a subtile dropShadow all around the icon, which is hard to get right,
+    and which is the main reason for this file. This file creates a dropShadow that is
+    pixel for pixel within 1% of the dropShadow used by apple.
+
+    To use this file, design your app icon, and then overlay this mask on top.
+    For example, to create a simple red linearGradient icon, use:
+        <svg viewport="0 0 512 512" width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+            <style>
+                #background {
+                    fill: url(#backgroundGradient);
+                }
+            </style>
+            <defs>
+                <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#F33" />
+                    <stop offset="100%" stop-color="#D00" />
+                </linearGradient>
+                <mask id="iconmask">
+                    <image href="big-sur-app-icon-mask.svg" />
+                </mask>
+            </defs>
+            <g mask="url(#iconmask)">
+                <rect id="background" width="100%" height="100%" />
+            </g>
+        </svg>
+
+    Note that this example expects this file to be in the same directory as the icon; if not, any other url should work as well.
+
+    A blog post about this file is expected some time soon on https://medium.com/@claude_e_e.
+
+-->
+    <style>
+        rect.background {
+            fill: black;
+            width: 100%;
+            height: 100%;
+        }
+
+        #iconmask g.gradienthelpers circle {
+            fill: url(#circleGradient);
+            }
+
+        #iconmask g.gradienthelpers rect {
+            fill: url(#rectGradient);
+        }
+
+        #iconmask g.gradienthelpers use {
+            transform-origin: 256px 272px;
+        }
+
+        #iconmask g.foreground > rect {
+            fill: white;
+        }
+    </style>
+    <defs>
+        <radialGradient id="circleGradient">
+            <stop offset="0%" stop-color="white" />
+            <stop offset="69.6%" stop-color="white" />  <!-- 78 / (78 + 34) -->
+            <stop offset="69.6%" stop-color="rgb(63, 63, 63)" />
+            <stop offset="70.5%" stop-color="rgb(63, 63, 63)" />
+            <stop offset="87.5%" stop-color="rgb(13, 13, 13)" /> <!-- 98 / (78 + 34) -->
+            <stop offset="90.2%" stop-color="rgb(8, 8, 8)" />
+            <stop offset="95%" stop-color="rgb(2.5, 2.5, 2.5)" />
+            <stop offset="98%" stop-color="rgb(1, 1, 1)" />
+        </radialGradient>
+        <linearGradient id="rectGradient" x1="0%" y1="0%" x2="0%" y2="100%" href="#circleGradient" />
+    </defs>
+
+    <g id="iconmask">
+        <rect class="background" />
+
+        <g class="gradienthelpers">
+            <circle id="gradienttopleft" r="112" cx="140" cy="156" />
+            <use href="#gradienttopleft" style="transform: rotate(90deg);" />
+            <use href="#gradienttopleft" style="transform: rotate(180deg);" />
+            <use href="#gradienttopleft" style="transform: rotate(270deg);" />
+            <rect id="gradientbottom" x="140" y="388" width="233" height="112" />
+            <use href="#gradientbottom" style="transform: rotate(90deg);" />
+            <use href="#gradientbottom" style="transform: rotate(180deg);" />
+            <use href="#gradientbottom" style="transform: rotate(270deg);" />
+        </g>
+
+        <g class="foreground">
+            <rect x="50" y="54" width="412" height="412" rx="90" />
+        </g>
+    </g>
+</svg>
+
