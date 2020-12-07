@@ -27,7 +27,7 @@
                     <stop offset="100%" stop-color="#D00" />
                 </linearGradient>
                 <mask id="iconmask">
-                    <image href="big-sur-app-icon-mask.svg" />
+                    <image href="big-sur-app-icon-mask.svg" width="100%" height="100%" />
                 </mask>
             </defs>
             <g mask="url(#iconmask)">
@@ -35,7 +35,8 @@
             </g>
         </svg>
 
-    Note that this example expects this file to be in the same directory as the icon; if not, any other url should work as well.
+    Note that this example expects this file to be in the same directory as the icon; if not (or if this is not supported by your app), any other url should work as well.
+    For instance, at the time of writing a direct link to github is: https://raw.githubusercontent.com/reinhrst/icons/main/svg/big-sur-app-icon-mask.svg
 
     A blog post about this file is expected some time soon on https://medium.com/@claude_e_e.
 
